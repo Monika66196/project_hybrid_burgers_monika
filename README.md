@@ -32,6 +32,35 @@ Where:
 
 This nonlinear PDE captures phenomena like **shock waves**, **steepening**, and **diffusion**.
 
+##  Project Goals
+
+1. **Low circuit depth** – Design shallow quantum circuits to remain viable on noisy devices.  
+2. **Low qubit footprint** – Use Matrix Product State (MPS)-like compression.  
+3. **Minimal classical overhead** – Avoid overly complex preprocessing.  
+4. **Noise robustness** – Use Qiskit Aer for realistic noise simulation.  
+5. **Scalability** – Extendable to 2D Burgers’ or Navier–Stokes equations.
+
+---
+
+##  Methodology
+
+### Classical Part – Advection
+- Implemented using the **SSP-RK3 scheme** for stability in nonlinear advection.
+
+### Quantum Part – Diffusion
+- Implemented via a **Variational Quantum Circuit (VQC)**.
+- **Amplitude encoding** is used for mapping the velocity field to qubit states.
+- **TwoLocal ansatz** in Qiskit provides a low-depth, parameterized circuit.
+
+### Hybrid Time-Stepping
+1. Half-step classical advection (SSP-RK3).
+2. Quantum diffusion step via VQC.
+3. Final half-step classical advection.
+
+### Noise and Hardware Tests
+- Simulated **noisy quantum hardware** using Qiskit Aer’s noise models.
+- Provided option to run on a **real IBMQ backend** for hardware verification.
+
 
 ## 📂 Project Structure
 

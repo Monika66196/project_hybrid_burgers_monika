@@ -33,3 +33,27 @@ This nonlinear PDE captures phenomena like **shock waves**, **steepening**, and 
 ---
 
 ## 📂 Project Structure
+
+
+#**Clone the Repository**
+
+git clone https://github.com/Monika66196/project_hybrid_burgers_monika.git
+cd project_hybrid_burgers_monika
+
+
+#**Install Dependencies**
+
+pip install -r requirements.txt
+
+
+# **Run the Jupyter Notebook**
+
+jupyter notebook notebooks/hybrid_burgers_qiskit_monika_expanded_ibmq.ipynb
+
+If you want to run on a real IBM Quantum device:
+
+Replace 'XXXXXXXXXXX' with your IBMQ API token in the notebook.
+
+Choose your backend using:
+
+provider.backends()

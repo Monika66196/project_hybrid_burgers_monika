@@ -61,6 +61,19 @@ This nonlinear PDE captures phenomena like **shock waves**, **steepening**, and 
 - Simulated **noisy quantum hardware** using Qiskit Aer’s noise models.
 - Provided option to run on a **real IBMQ backend** for hardware verification.
 
+- 
+## 🏁 Conclusion
+
+This project demonstrated a **viable hybrid quantum–classical approach** to solving PDEs such as the viscous Burgers’ equation.  
+Key takeaways:
+- **Quantum circuits** can learn to approximate physical operators like diffusion.  
+- **Classical methods** efficiently handle nonlinear advection dynamics.  
+
+This approach shows promise for **scalable fluid dynamics simulations** on near-term quantum hardware.  
+Future work will explore:
+- Extending to **higher dimensions** (2D/3D Burgers’, Navier–Stokes).  
+- Using **tensor network-based quantum ansätze** for further qubit reduction and circuit depth minimization.  
+
 
 ## 📂 Project Structure
 

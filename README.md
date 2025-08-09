@@ -17,20 +17,21 @@ The solver is designed with:
 
 ---
 
-## 🧮 The Burgers’ Equation
+##  The Burgers’ Equation
+
+
 We solve the **viscous Burgers' equation**:
 
-\[
+$$
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}
-\]
+$$
 
 Where:
-- \( u(x, t) \): fluid velocity
-- \( \nu \): viscosity
+- $u(x, t)$ : fluid velocity  
+- $\nu$ : viscosity  
 
 This nonlinear PDE captures phenomena like **shock waves**, **steepening**, and **diffusion**.
 
----
 
 ## 📂 Project Structure
 

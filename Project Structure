@@ -1,0 +1,10 @@
+src/
+  grid_utils.py          # Grid setup & initial conditions
+  classical_solver.py    # Classical PDE solver for advection
+  quantum_utils.py       # Qiskit encoding & quantum diffusion
+notebooks/
+  hybrid_burgers_qiskit_monika_expanded_ibmq.ipynb
+results/
+  summary.md             # Key results
+README.md
+requirements.txt

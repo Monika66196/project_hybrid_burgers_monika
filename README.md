@@ -16,11 +16,16 @@ The solver is designed with:
 - **Scalability** to larger grids or even 2D/3D extensions
 
 ---
+## Introduction
+The one-dimensional (1D) viscous Burgers' equation is a nonlinear partial differential equation that is used as a basic model for many fluid dynamics processes, such as creating shock waves, nonlinear steepening, and viscous dissipation. This standard is used to test numerical methods because it is easier to understand than the full Navier-Stokes equations but still captures important convective-diffusive dynamics (Whitham, 1974; Burgers, 1948).
+The Burgers' equation has been solved using a lot of old-fashioned numerical methods, such as finite difference methods, spectral methods, and finite element methods (Canuto et al., 2006). These methods are very accurate, but they can sometimes have trouble with steep slopes without making non-physical oscillations, especially when the Reynolds number is high (Gottlieb & Shu, 1998). Also, it is getting more and more expensive to compute high-resolution spatial discretizations, which makes them less useful for big problems and simulations that need to happen in real time.
+Quantum computing has made some exciting new ideas for speeding up the solution of partial differential equations (PDEs), especially with algorithms like Quantum Phase Estimation (QPE) and the Harrow–Hassidim–Lloyd (HHL) algorithm for solving linear systems (Lloyd et al., 1996; Harrow et al., 2009; Cao et al., 2019). But it is not easy to use these algorithms directly on nonlinear PDEs like the Burgers' equation because quantum evolution is inherently linear and doesn't naturally include nonlinear terms. People have suggested methods like Carleman linearization (Lubasch et al., 2020) and nonlinear-to-linear embeddings, but these often need a lot of extra qubits, have stability problems, or make approximation errors that lower accuracy.
+Quantum algorithms have worked well on linear partial differential equations (PDEs), but there isn't much research on quantum methods for nonlinear PDEs, especially the Burgers' equation. Many of the studies that are already out there have some big problems. First, Carleman-based and polynomial-expansion methods don't work well with nonlinear order, which means they need too many qubits to work with current noisy intermediate-scale quantum (NISQ) devices (Lubasch et al., 2020). Second, linearization methods make implementation easier, but they also add up approximation errors that become more of a problem over time when modeling shock-like structures. Third, a lot of hybrid quantum-classical schemes don't do a good job of balancing the computational load between quantum and classical resources, so they don't speed up performance compared to classical solvers. Finally, there isn't enough targeted benchmarking because not many existing studies carefully test quantum methods for the Burgers' equation in difficult physical situations, like high Reynolds numbers or situations where sharp gradients form, which is where classical methods usually have trouble.
 
 ##  The Burgers’ Equation
 
 
-We solve the **viscous Burgers' equation**:
+We will solve the **viscous Burgers' equation**:
 
 $$
 \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = \nu \frac{\partial^2 u}{\partial x^2}
@@ -103,6 +108,24 @@ Replace 'XXXXXXXXXXX' with your IBMQ API token in the notebook.
 provider.backends()
 
 ## References
+References
+
+• Lloyd, S., Mohseni, M., & Rebentrost, P. (2014). Quantum principal component analysis. Nature Physics, 10(9), 631–633.
+Burgers, J. M. (1948). A mathematical model illustrating the theory of turbulence. Advances in Applied Mechanics, 1, 171–199.
+
+• Lloyd, S., Mohseni, M., & Rebentrost, P. (2014). Quantum principal component analysis. Nature Physics, 10(9), 631–633.
+Canuto, C., Hussaini, M. Y., Quarteroni, A., & Zang, T. A. (2006). Spectral Methods: Fundamentals in Single Domains. Springer.
+
+• Lloyd, S., Mohseni, M., & Rebentrost, P. (2014). Quantum principal component analysis. Nature Physics, 10(9), 631–633.
+Gottlieb, D., & Shu, C.-W. (1998). Total variation diminishing Runge–Kutta schemes. Mathematics of Computation, 67(221), 73–85.
+
+• Lloyd, S., Mohseni, M., & Rebentrost, P. (2014). Quantum principal component analysis. Nature Physics, 10(9), 631–633.
+
+• Lubasch, M., Joo, J., Moinier, P., Kiffner, M., & Jaksch, D. (2020). Variational quantum algorithms for nonlinear problems. Physical Review A, 101(1), 010301.
+
+• Whitham, G. B. (1974). Linear and Nonlinear Waves. Wiley-Interscience.
+
+• Cao, Y., Romero, J., Olson, J. P., Degroote, M., Johnson, P. D., Kieferová, M., ... & Aspuru-Guzik, A. (2019). Quantum chemistry in the age of quantum computing. Chemical Reviews, 119(19), 10856–10915.
 
 • Orús, R. (2019). Tensor networks for complex quantum systems. Nature Reviews Physics. https://doi.org/10.1038/s42254-019-0086-7
 

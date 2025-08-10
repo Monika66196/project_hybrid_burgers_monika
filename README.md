@@ -1,8 +1,8 @@
 # Quantum–Classical Hybrid Solver for the 1D Burgers’ Equation
 
 **Participant 1:  Monika Sharma**
-**Enrollment ID : gst-o2yYgbFM4RS5hwq**
-**Participant 1:  Janardhan Kuraopothuka Pawan Kumar**
+**Enrollment ID : gst-o2yYgbFM4RS5hwq** || 
+**Participant 2:  Janardhan Kuraopothuka Pawan Kumar**
 **Enrollment ID : gst-kwaAmEE0Ns1bjPQ**
 **GitHub Repository:** [project_hybrid_burgers_monika](https://github.com/Monika66196/project_hybrid_burgers_monika)
 
